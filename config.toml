@@ -32,7 +32,7 @@ disqusShortname = "yourdiscussshortname"
     thumbnail = "images/tn.png"
 
     # Custom CSS
-    custom_css = []
+    custom_scss = ["scss/main.scss"]
 
     # Alignment of Mobile Menu items
     itemscentered = true
