@@ -5,5 +5,66 @@
   {{ .Title }} - {{ .Site.Title }}
 {{ end }}
 {{ define "content" }}
-  projects/list.html
+
+<section class="container">
+    <h1 class="title">{{ .Title }}</h1>
+
+    <ul class="projects">
+
+        {{ range .Paginator.Pages }}
+        <li class="projects__item">
+
+            <div class="projects__item__left">
+
+                {{ with .Title }}
+                <b class="projects__item__name">
+                    {{ . }}
+                </b>
+                {{ end }}
+
+                {{ if and .Params.start .Params.end }}
+                <span class="projects__item__date">
+                    {{ .Params.start }} - {{ .Params.end }}
+                </span>
+                {{ end }}
+
+            </div>
+
+            <div class="projects__item__right">
+
+                {{ with .Description }}
+                <span class="projects__item__description">
+                    {{ . }}
+                </span>
+                {{ end }}
+
+                {{ with .Params.company }}
+                <div class="projects__item__company">
+
+                    {{ with .type }}
+                    <span class="projects__item__company__type">{{ . }}</span>
+                    {{ end }}
+
+                    {{ with .name }}
+                    <span class="projects__item__company__name">{{ . }}</span>
+                    {{ end }}
+
+                    {{ with .url }}
+                    <a href="{{ . }}" class="projects__item__company__url">
+                        {{ $url := replace . "http://" "" }}
+                        {{ $url := replace $url "https://" "" }}
+                        {{ $url }}
+                    </a>
+                    {{ end }}
+                </div>
+                {{ end }}
+
+            </div>
+
+        </li>
+        {{ end }}
+
+    </ul>
+</section>
+
 {{ end }}

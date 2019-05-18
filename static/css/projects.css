@@ -1,0 +1,41 @@
+.projects {
+    margin: 0;
+    padding: 0;
+}
+
+.projects__item {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects__item__left {
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid #AAA;
+}
+
+.projects__item__right {
+    padding-left: 10px;
+}
+
+.projects__item__name {
+}
+
+.projects__item__description {
+}
+
+.projects__item__date {
+}
+
+.projects__item__company {
+}
+
+.projects__item__company__type {
+}
+
+.projects__item__company__name {
+}
+
+.projects__item__company__url {
+}
