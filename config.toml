@@ -27,7 +27,7 @@ disqusShortname = "yourdiscussshortname"
     hideCredits = false
     hideCopyright = false
 
-    custom_css = ["css/projects.css"]
+    custom_css = ["css/main.css", "css/project.css", "css/projects.css"]
 
     itemscentered = true
     rtl = false
@@ -49,9 +49,9 @@ disqusShortname = "yourdiscussshortname"
     url = "https://www.linkedin.com/in/naro143/"
 
 [[menu.main]]
-    name = "Blog"
+    name = "Projekte"
     weight = 1
-    url  = "posts"
+    url  = "projects"
 [[menu.main]]
     name = "About"
     weight = 2

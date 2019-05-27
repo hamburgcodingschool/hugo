@@ -17,9 +17,9 @@
             <div class="projects__item__left">
 
                 {{ with .Title }}
-                <b class="projects__item__name">
+                <h2 class="projects__item__name">
                     {{ . }}
-                </b>
+                </h2>
                 {{ end }}
 
                 {{ if and .Params.start .Params.end }}
@@ -33,31 +33,14 @@
             <div class="projects__item__right">
 
                 {{ with .Description }}
-                <span class="projects__item__description">
-                    {{ . }}
-                </span>
+                <p class="projects__item__description">
+                    {{ truncate 100 . }}
+                </p>
                 {{ end }}
 
-                {{ with .Params.company }}
-                <div class="projects__item__company">
-
-                    {{ with .type }}
-                    <span class="projects__item__company__type">{{ . }}</span>
-                    {{ end }}
-
-                    {{ with .name }}
-                    <span class="projects__item__company__name">{{ . }}</span>
-                    {{ end }}
-
-                    {{ with .url }}
-                    <a href="{{ . }}" class="projects__item__company__url">
-                        {{ $url := replace . "http://" "" }}
-                        {{ $url := replace $url "https://" "" }}
-                        {{ $url }}
-                    </a>
-                    {{ end }}
+                <div class="projects__item__more">
+                    <a href="{{ .Permalink }}">mehr -></a>
                 </div>
-                {{ end }}
 
             </div>
 
